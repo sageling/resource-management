@@ -1,7 +1,9 @@
 # resource-management
 Takes input from files containing "departments" and items that department desires, and uses a global budget to buy items for each department.
 
-This project was created in cooperation with a partner, Jany Hernandez. Unfortunately, I no longer possess the external notes that were taken of each other's contributions.
+This project was created for a college course in cooperation with a partner, Jany Hernandez. Unfortunately, I no longer possess the external notes that were taken of each other's contributions.
+
+### Created in Java, using Eclipse IDE.
 
 The Item and Department classes define the basic objects the driver class resourceManagement and our priority queue work with.
 /nWhen the program runs, resourceManagement searches for predefined text files that each contain one department, its desired items, and the price of each desired item. If it finds each text file it was instructed to look for, it hands them to PriorityQueue to be contained.
@@ -10,3 +12,5 @@ In either case, the item is removed from the desired list, and the department is
 If a department has no more desired items but global budget is still positive, the department is given a "scholarship" item of either 1000 or the remaining budget, whichever is smaller.
 Once the budget reaches 0, resourceManagement iteratively retrieves a report from each department in the queue detailing what items were purchased for what price, what items were denied, the total budget spent on that department, and the percentage of the global budget it received.
 resourceManagement also outputs a list of each purchase that was made, in order.
+
+To run it, it requires at least one text file in its folder to scan a department from- for each text file, the whole first line is scanned as the department's name. Then, it iteratively scans for item names and prices, using nextString and nextDouble respectively. Item names thus must be <ins>one-word,</ins> and each item name <ins>must</ins> be followed by a double. Then, resourceManagement must be edited to look for the specific text file(s) you wish for it to look for (line 58). You will likely need to delete or duplicate some lines depending on how many text files you are using. Lastly, the STARTING_BUDGET variable (line 54) may be edited at your discretion.
